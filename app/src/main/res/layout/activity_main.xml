@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--in this we are displaying a nested scroll view-->
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/idNestedSV"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <!--recycler view for displaying our list of data
+        and we are making nested scroll for our
+        recycler view as false-->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/idRVUsers"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:listitem="@layout/user_rv_item" />
+
+    <!--we are adding progress bar for thepurpose of loading-->
+    <ProgressBar
+        android:id="@+id/idPBLoading"
+        android:layout_width="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_height="wrap_content" />
+
+</RelativeLayout>
