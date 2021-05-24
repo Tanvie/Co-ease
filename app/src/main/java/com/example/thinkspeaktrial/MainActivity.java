@@ -1,6 +1,7 @@
 package com.example.thinkspeaktrial;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ProgressBar;
 import android.widget.Toast;
@@ -50,7 +51,7 @@ public class MainActivity extends AppCompatActivity {
     private void getDataFromAPI() {
 
         // creating a string variable for URL.
-        String url = "https://spreadsheets.google.com/feeds/list/1UmXunAbUMIS6Lz9Zjsw0-AgFXbpYs2vHUzLw528lhyw/od6/public/values?alt=json";
+        String url = "https://spreadsheets.google.com/feeds/list/1vhevRpCGGGUjZ7rHDsCPbpQf9dCs08dYR8NWZE2VyrM/od6/public/values?alt=json";
 
         // creating a new variable for our request queue
         RequestQueue queue = Volley.newRequestQueue(MainActivity.this);
@@ -65,10 +66,13 @@ public class MainActivity extends AppCompatActivity {
                     JSONArray entryArray = feedObj.getJSONArray("entry");
                     for(int i=0; i<entryArray.length(); i++){
                         JSONObject entryObj = entryArray.getJSONObject(i);
-                        String firstName = entryObj.getJSONObject("gsx$firstname").getString("$t");
-                        String lastName = entryObj.getJSONObject("gsx$lastname").getString("$t");
-                        String email = entryObj.getJSONObject("gsx$email").getString("$t");
-                        userModalArrayList.add(new UserModal(firstName, lastName, email));
+                        Log.d("OBJ", "onResponse: "+entryObj);
+                        String temp = entryObj.getJSONObject("gsx$temp").getString("$t");
+                        Log.d("MY DEBUG!", "onResponse: "+temp);
+                        String oxygen = entryObj.getJSONObject("gsx$oxygen").getString("$t");
+                        String pulse_rate = entryObj.getJSONObject("gsx$pulserate").getString("$t");
+                        String bed_no = entryObj.getJSONObject("gsx$bedno").getString("$t");
+                        userModalArrayList.add(new UserModal(bed_no,temp,oxygen,pulse_rate ));
 
                         // passing array list to our adapter class.
                         userRVAdapter = new UserRVAdapter(userModalArrayList, MainActivity.this);

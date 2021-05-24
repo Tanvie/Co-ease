@@ -6,38 +6,48 @@ package com.example.thinkspeaktrial;
 public class UserModal {
     // variables for our first name, 
     // last name, email and avatar
-    private String first_name;
-    private String last_name;
-    private String email;
+    private String bedNo;
+    private String temp;
 
-    public String getFirst_name() {
-        return first_name;
+    private String oxygen;
+    private String pulseRate;
+
+    public String getBedNo() {
+        return bedNo;
     }
 
-    public void setFirst_name(String first_name) {
-        this.first_name = first_name;
+    public void setBedNo(String bedNo) {
+        this.bedNo = bedNo;
     }
 
-    public String getLast_name() {
-        return last_name;
+    public String getTemp() {
+        return temp;
     }
 
-    public void setLast_name(String last_name) {
-        this.last_name = last_name;
+    public void setTemp(String temp) {
+        this.temp = temp;
     }
 
-    public String getEmail() {
-        return email;
+    public String getOxygen() {
+        return oxygen;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public void setOxygen(String oxygen) {
+        this.oxygen = oxygen;
     }
 
+    public String getPulseRate() {
+        return pulseRate;
+    }
 
-    public UserModal(String first_name, String last_name, String email) {
-        this.first_name = first_name;
-        this.last_name = last_name;
-        this.email = email;
+    public void setPulseRate(String pulseRate) {
+        this.pulseRate = pulseRate;
+    }
+
+    public UserModal(String bedNo, String temp, String oxygen, String pulseRate) {
+        this.bedNo = bedNo;
+        this.temp = temp;
+        this.oxygen = oxygen;
+        this.pulseRate = pulseRate;
     }
 }

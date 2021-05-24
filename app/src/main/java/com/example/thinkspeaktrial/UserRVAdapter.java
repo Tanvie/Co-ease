@@ -38,9 +38,10 @@ public class UserRVAdapter extends RecyclerView.Adapter<UserRVAdapter.ViewHolder
         UserModal userModal = userModalArrayList.get(position);
 
         // on the below line we are setting data to our text view.
-        holder.firstNameTV.setText(userModal.getFirst_name());
-        holder.lastNameTV.setText(userModal.getLast_name());
-        holder.emailTV.setText(userModal.getEmail());
+        holder.bedNoTV.setText(userModal.getBedNo());
+        holder.oxygenTV.setText(userModal.getOxygen());
+        holder.tempTV.setText(userModal.getTemp());
+        holder.pulseTV.setText(userModal.getPulseRate());
 
         // on below line we are loading our image from the URL
         // in our image view using Picasso.
@@ -55,15 +56,17 @@ public class UserRVAdapter extends RecyclerView.Adapter<UserRVAdapter.ViewHolder
     public class ViewHolder extends RecyclerView.ViewHolder {
 
         // creating a variable for our text view and image view.
-        private TextView firstNameTV, lastNameTV, emailTV;
+        private TextView tempTV, bedNoTV, oxygenTV, pulseTV;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
 
             // initializing our variables.
-            firstNameTV = itemView.findViewById(R.id.idTVFirstName);
-            lastNameTV = itemView.findViewById(R.id.idTVLastName);
-            emailTV = itemView.findViewById(R.id.idTVEmail);
+
+            tempTV = itemView.findViewById(R.id.idTVTemp);
+            bedNoTV = itemView.findViewById(R.id.idTVBedNo);
+            oxygenTV = itemView.findViewById(R.id.idTVOxygen);
+            pulseTV = itemView.findViewById(R.id.idTVPulseRate);
         }
     }
 }
