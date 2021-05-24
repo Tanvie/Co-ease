@@ -12,6 +12,13 @@ public class UserModal {
     private String oxygen;
     private String pulseRate;
 
+    public UserModal(String bedNo, String temp, String oxygen, String pulseRate) {
+        this.bedNo = bedNo;
+        this.temp = temp;
+        this.oxygen = oxygen;
+        this.pulseRate = pulseRate;
+    }
+
     public String getBedNo() {
         return bedNo;
     }
@@ -41,13 +48,6 @@ public class UserModal {
     }
 
     public void setPulseRate(String pulseRate) {
-        this.pulseRate = pulseRate;
-    }
-
-    public UserModal(String bedNo, String temp, String oxygen, String pulseRate) {
-        this.bedNo = bedNo;
-        this.temp = temp;
-        this.oxygen = oxygen;
         this.pulseRate = pulseRate;
     }
 }

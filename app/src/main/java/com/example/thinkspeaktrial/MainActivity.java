@@ -64,15 +64,15 @@ public class MainActivity extends AppCompatActivity {
                 try {
                     JSONObject feedObj = response.getJSONObject("feed");
                     JSONArray entryArray = feedObj.getJSONArray("entry");
-                    for(int i=0; i<entryArray.length(); i++){
+                    for (int i = 0; i < entryArray.length(); i++) {
                         JSONObject entryObj = entryArray.getJSONObject(i);
-                        Log.d("OBJ", "onResponse: "+entryObj);
+                        Log.d("OBJ", "onResponse: " + entryObj);
                         String temp = entryObj.getJSONObject("gsx$temp").getString("$t");
-                        Log.d("MY DEBUG!", "onResponse: "+temp);
+                        Log.d("MY DEBUG!", "onResponse: " + temp);
                         String oxygen = entryObj.getJSONObject("gsx$oxygen").getString("$t");
                         String pulse_rate = entryObj.getJSONObject("gsx$pulserate").getString("$t");
                         String bed_no = entryObj.getJSONObject("gsx$bedno").getString("$t");
-                        userModalArrayList.add(new UserModal(bed_no,temp,oxygen,pulse_rate ));
+                        userModalArrayList.add(new UserModal(bed_no, temp, oxygen, pulse_rate));
 
                         // passing array list to our adapter class.
                         userRVAdapter = new UserRVAdapter(userModalArrayList, MainActivity.this);

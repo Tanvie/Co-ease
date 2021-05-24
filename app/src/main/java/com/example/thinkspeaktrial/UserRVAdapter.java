@@ -1,6 +1,7 @@
 package com.example.thinkspeaktrial;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,8 +15,8 @@ import java.util.ArrayList;
 public class UserRVAdapter extends RecyclerView.Adapter<UserRVAdapter.ViewHolder> {
 
     // variable for our array list and context.
-    private ArrayList<UserModal> userModalArrayList;
-    private Context context;
+    private final ArrayList<UserModal> userModalArrayList;
+    private final Context context;
 
     // creating a constructor.
     public UserRVAdapter(ArrayList<UserModal> userModalArrayList, Context context) {
@@ -43,6 +44,22 @@ public class UserRVAdapter extends RecyclerView.Adapter<UserRVAdapter.ViewHolder
         holder.tempTV.setText(userModal.getTemp());
         holder.pulseTV.setText(userModal.getPulseRate());
 
+        if (Integer.parseInt(userModal.getOxygen()) < 90) {
+            holder.oxygenTV.setTextColor(Color.parseColor("#FF0000"));
+        } else {
+            holder.oxygenTV.setTextColor(Color.parseColor("#008000"));
+        }
+        if (Integer.parseInt(userModal.getTemp()) > 37) {
+            holder.tempTV.setTextColor(Color.parseColor("#FF0000"));
+        } else {
+            holder.tempTV.setTextColor(Color.parseColor("#008000"));
+        }
+        if (Integer.parseInt(userModal.getPulseRate()) <= 60 || Integer.parseInt(userModal.getPulseRate()) >= 100) {
+            holder.pulseTV.setTextColor(Color.parseColor("#FF0000"));
+        } else {
+            holder.pulseTV.setTextColor(Color.parseColor("#008000"));
+        }
+
         // on below line we are loading our image from the URL
         // in our image view using Picasso.
     }
@@ -56,7 +73,10 @@ public class UserRVAdapter extends RecyclerView.Adapter<UserRVAdapter.ViewHolder
     public class ViewHolder extends RecyclerView.ViewHolder {
 
         // creating a variable for our text view and image view.
-        private TextView tempTV, bedNoTV, oxygenTV, pulseTV;
+        private final TextView tempTV;
+        private final TextView bedNoTV;
+        private final TextView oxygenTV;
+        private final TextView pulseTV;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
