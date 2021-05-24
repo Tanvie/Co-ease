@@ -18,11 +18,11 @@ Due to this pandemic, healthcare workers are at constant risk of getting infecte
 2. RFID Scanner is used for scanning RFID cards.  
 3. Pulse oximeter sensor is reading oxygen level and pulse rate of patient and sending data to NodeMCU for further processing.
 4. The Temperature sensor is reading the body temperature of the patient.
-5. NodeMCU, used as a microcontroller, is responsible for reading real-time data from both sensors and sending it to ThingsSpeak Cloud.
+5. NodeMCU, used as a microcontroller, is responsible for reading real-time data from both sensors and sending it to  Google Sheet.
 
 # Software Requirements
 
-1. Thing Speak Cloud Platform for logging and fetching the patients data in an android application.
+1. Google sheets for logging and fetching the patients data in an android application.
 2. The Android app to highlight high-risk patients and help doctors to diagnose them easily. 
 3. Eagle software for the PCB design for the prototype
 4. Solidworks software to demonstrate the final look of the Co-ease kit.
