@@ -1,7 +1,10 @@
 # Co-ease
 
-Google sheet Link: https://docs.google.com/spreadsheets/d/1vhevRpCGGGUjZ7rHDsCPbpQf9dCs08dYR8NWZE2VyrM/edit?usp=sharing
-Published sheet: https://docs.google.com/spreadsheets/d/e/2PACX-1vQzFY2IiW0YIpF3olD__XKCJnUhB_rSzWAKo37XtJZTdJPn9H15wy5zQjv8JPtlIk43qOZNNXK7NAyF/pubhtml
+### arduino code: https://github.com/Tanvie/Co-ease-arduino
+### app-script code: https://github.com/Tanvie/Co-ease-app-script
+
+### Google sheet Link: https://docs.google.com/spreadsheets/d/1vhevRpCGGGUjZ7rHDsCPbpQf9dCs08dYR8NWZE2VyrM/edit?usp=sharing
+### Published sheet: https://docs.google.com/spreadsheets/d/e/2PACX-1vQzFY2IiW0YIpF3olD__XKCJnUhB_rSzWAKo37XtJZTdJPn9H15wy5zQjv8JPtlIk43qOZNNXK7NAyF/pubhtml
 
 
 # Title of the Project
